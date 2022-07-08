@@ -1,0 +1,8 @@
+<h3>Create an Account</h3>
+<hr>
+<form action="{% url 'CreateAccount' %}" method="POST">
+  {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+    <br><br>
+</form>

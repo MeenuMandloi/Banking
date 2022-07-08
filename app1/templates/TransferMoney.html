@@ -1,0 +1,24 @@
+{% block content %}
+<h2>Transfer Money</h2>
+<form method="POST", action="{% url 'TransferMoney' %}">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+        <tr>
+            <td>Account No. :
+            <input type="text" placeholder="Enter Account No." name="account_No" required></td>
+        </tr>
+        <tr>
+            <td>Name :
+            <input type="text" placeholder="Enter Name" name="name" required> </td>
+        </tr>
+        <tr>
+            <tr>
+            <td>Amount :
+            <input type="text" placeholder="Enter Amount" name="amount" required> </td>
+        </tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

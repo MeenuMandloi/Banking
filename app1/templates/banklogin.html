@@ -1,0 +1,22 @@
+{% block content %}
+
+    {{ message }}
+<h2>Login</h2>
+<form method="POST", action="{% url 'banklogin' %}">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+        <tr>
+            <td>Email :
+            <input type="email" placeholder="Enter Email" name="email" required></td>
+        </tr>
+        <tr>
+            <td>Password :
+            <input type="password" placeholder="Enter Password" name="password" required> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
